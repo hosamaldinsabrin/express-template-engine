@@ -1,8 +1,6 @@
-const express = require("express");
+import express from "express";
+import api from "./routes.js";
 const app = express();
-const api = require("./routes");
-const { response } = require("express");
-
 app.use("/api", api);
 
 app.get("/", (req, res) => {

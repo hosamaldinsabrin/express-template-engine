@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "routes.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -11,6 +12,6 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "lowdb": "^1.0.0"
+    "lowdb": "^2.1.0"
   }
 }

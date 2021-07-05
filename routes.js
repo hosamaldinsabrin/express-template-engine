@@ -1,4 +1,5 @@
-const express = require("express");
+import express from "express"
+import { getAllData } from "./dbConnector.js"; // Hier müssen auch noch die anderen Funktionen importiert werden. 
 const router = express.Router();
 
 router.use(function(req, res, next) {
@@ -9,6 +10,7 @@ router.use(function(req, res, next) {
 router
   .route("/")
   .get((req, res) => {
+    res.send(getAllData())
     // Hier sollen alle datenbank daten zurück gegeben werden.
   })
 
@@ -18,7 +20,7 @@ router
     // Hier sollen alle Musik Alben zurück gegegeben werden
   })
   .post((req, res) => {
-    // Hier soll ein neues Album mit einer neuen, einzigartigen uuid eingefügt werden.
+    // Hier soll ein neues Album mit einer neuen, einzigartigen uid eingefügt werden.
   });
 
   router
@@ -27,7 +29,7 @@ router
     // Hier sollen alle Filme zurück gegegeben werden
   })
   .post((req, res) => {
-    // Hier soll ein neuer Film mit einer neuen, einzigartigen uuid eingefügt werden.
+    // Hier soll ein neuer Film mit einer neuen, einzigartigen uid eingefügt werden.
   });
 
 router
@@ -39,8 +41,7 @@ router
   router
   .route("/film/:id")
   .get((req, res) => {
-    // Hier soll ein einziger FIlm anhand einer ID zurückgegeben werden.
+    // Hier soll ein einziger Film anhand einer ID zurückgegeben werden.
   })
 
-
-module.exports = router;
+  export default router;
